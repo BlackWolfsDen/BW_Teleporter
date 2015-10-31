@@ -212,11 +212,14 @@ local function TeleporterOnGossipSelect(event, player, unit, sender, intid, code
 
 	if (intid == 0) then -- Show teleport sub-menu
 	
+	    local team = player:GetTeam();
+	    local level = player:GetLevel();
+	    
 		for i, v in ipairs(Teleporter[sender]) do
 		
 		    if (i > 3) then
 		    
-		    	if((Teleporter[sender][i][3] == 2 or Teleporter[sender][i][3] == player:GetTeam())or(player:IsGM() == true))then
+	            	if(((Teleporter[sender][i][3] == 2) or (Teleporter[sender][i][3] == player:GetTeam())or(player:IsGM() == true))and(level >= Teleporter[sender][i][4]))then
 		        	player:GossipMenuAddItem(v[2], "|cff000000".. v[1].."|r", sender, i)
 		        end
 		    end
