@@ -237,9 +237,9 @@ local function TeleporterOnGossipSelect(event, player, unit, sender, intid, code
 	player:GossipComplete()
 end
 
-RegisterItemGossipEvent(npcid, 1, TeleporterOnHello)
-RegisterItemGossipEvent(npcid, 2, TeleporterOnGossipSelect)
-RegisterItemGossipEvent(itemid, 1, TeleportStoneOnHello)
+RegisterCreatureGossipEvent(npcid, 1, TeleporterOnHello)
+RegisterCreatureGossipEvent(npcid, 2, TeleporterOnGossipSelect)
+RegisterItemGossipEvent(itemid, 1, TeleporterOnHello)
 RegisterItemGossipEvent(itemid, 2, TeleporterOnGossipSelect)
 print("+Teleporter Online+")
 print("+-+-+-+-+-+-+-+-+-+")
