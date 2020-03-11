@@ -187,7 +187,7 @@ Teleporter = {
 	},
 };
 
-local function TeleportStoneOnHello(event, player, unit, sender, intid, code)
+local function TeleporterOnHello(event, player, unit, sender, intid, code)
 
 	if (player:IsInCombat()~=true)then	-- Show main menu
 	    
@@ -237,6 +237,8 @@ local function TeleporterOnGossipSelect(event, player, unit, sender, intid, code
 	player:GossipComplete()
 end
 
+RegisterItemGossipEvent(npcid, 1, TeleporterOnHello)
+RegisterItemGossipEvent(npcid, 2, TeleporterOnGossipSelect)
 RegisterItemGossipEvent(itemid, 1, TeleportStoneOnHello)
 RegisterItemGossipEvent(itemid, 2, TeleporterOnGossipSelect)
 print("+Teleporter Online+")
